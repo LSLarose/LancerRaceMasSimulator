@@ -1,0 +1,29 @@
+Règles de la course: Mille bornes modified
+Goal: Winners are the first half of players who reach the end instead of winner takes all(except last step)
+Changes: (based on https://www.regledujeu.fr/regle-mille-bornes/)
+  Before the race starts, roll for Bottes (piloting, legendary roll) or obtain via talent(RANK 3)
+  If more than two, discard Botte of your choice. If talent + roll, can pick twice.
+	Read as BOTTE (TALENT REQUIREMENT)[GAIN ADVANTAGE TO]:
+		- WORLDMAP GAMEPLAY ADVANTAGE
+		- LANCER GAMEPLAY ADVANTAGE
+
+	- Prioritaire (LEADER/JUGGERNAUT)[SYS]:
+		- You are not affected by zone effects, the Union Forward Forces will ignore you
+		- Immune to JAMMED and IMMOBILIZED, Status effects clear at the start of your turn instead of end
+	- Citerne (GREASE MONKEY/WALKING ARMORY)[HULL]:
+		- You draw 2 more cards at the start of each MILLE BORNES TURN
+		- WEAPONS replenish their charges completely and SYSTEMS replenish 1 charge after combat
+	- Increvable (ENGINEER/BLACK THUMB/NUCLEAR CAVALIER)[ENG]:
+		- You are not affected by cold weather effects
+		- Immune to SLOWED and PRONE, IMMOBILIZED counts as SLOWED, Stunned counts as SLOWED + IMPAIRED
+	- As (ACE/SKIRMISHER)[AGI]:
+		- You are not affected by meteorite weather effects
+		- Act before everyone else in a round. Start all your turns with a free boost.
+
+  Multiplayer rules (from 2 player rules)
+	- Players all act instead of by turn and pool their card actions
+	- move by half their combined movement
+	- require two fixes to clear a STATUS
+	- require two attacks to infict a STATUS
+
+  
