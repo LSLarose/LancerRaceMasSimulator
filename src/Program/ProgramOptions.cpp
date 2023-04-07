@@ -1,4 +1,4 @@
-#include "ProgramOptions.h"
+#include "../../include/Program/ProgramOptions.h"
 
 ProgramOptions::ProgramOptions(): optionOne(DEFAULT_PARTICIPANTS), optionTwo(DEFAULT_NAME)
 {

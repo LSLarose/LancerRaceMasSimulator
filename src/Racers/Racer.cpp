@@ -9,22 +9,26 @@ Racer::Racer(Personality trait, int hull, int agility, int systems, int engineer
 
 int Racer::getHull()
 {
-    return std::clamp(hull + (trait == sturdy ? HASE_PERSONALITY_BONUS : 0), MIN_HASE_BONUS, MAX_HASE_BONUS);
+    return getHase(hull, sturdy);
 }
 
 int Racer::getAgility()
 {
-    return std::clamp(agility + (trait == quick ? HASE_PERSONALITY_BONUS : 0), MIN_HASE_BONUS, MAX_HASE_BONUS);
+    return getHase(agility, quick);
 }
 
 int Racer::getSystems()
 {
-    return std::clamp(systems + (trait == playful ? HASE_PERSONALITY_BONUS : 0), MIN_HASE_BONUS, MAX_HASE_BONUS);
+    return getHase(systems, playful);
 }
 
 int Racer::getEngineering()
 {
-    return std::clamp(engineering + (trait == confident ? HASE_PERSONALITY_BONUS : 0), MIN_HASE_BONUS, MAX_HASE_BONUS);
+    return getHase(engineering, confident);
+}
+
+int Racer::getHase(int haseScore, Personality personality) {
+    return std::clamp(haseScore + (trait == personality ? HASE_PERSONALITY_BONUS : 0), MIN_HASE_BONUS, MAX_HASE_BONUS);
 }
 
 void Racer::setHull(int newHull)

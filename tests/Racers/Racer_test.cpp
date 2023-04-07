@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../../src/Racers/Racer.h"
+#include "../../src/Racers/Racer.cpp"
 
 const int HASE_TEST_VAL = MAX_HASE_BONUS/2;
 
@@ -9,14 +9,20 @@ TEST(TestGetters, Hull_Normal) {
     EXPECT_EQ(racer.getHull(), HASE_TEST_VAL);
 }
 
+TEST(TestGetters, Hull_Bonus) {
+    Racer racer = Racer(Personality::sturdy, HASE_TEST_VAL, 0, 0, 0);
+
+    EXPECT_EQ(racer.getHull(), HASE_TEST_VAL + HASE_PERSONALITY_BONUS);
+}
+
 TEST(TestGetters, Hull_Min) {
-    Racer racer = Racer(Personality::unavailable, MIN_HASE_BONUS-HASE_TEST_VAL, 0, 0, 0);
+    Racer racer = Racer(Personality::unavailable, MIN_HASE_BONUS - HASE_TEST_VAL, 0, 0, 0);
 
     EXPECT_EQ(racer.getHull(), MIN_HASE_BONUS);
 }
 
 TEST(TestGetters, Hull_Max) {
-    Racer racer = Racer(Personality::unavailable, MAX_HASE_BONUS+HASE_TEST_VAL, 0, 0, 0);
+    Racer racer = Racer(Personality::unavailable, MAX_HASE_BONUS + HASE_TEST_VAL, 0, 0, 0);
 
     EXPECT_EQ(racer.getHull(), MAX_HASE_BONUS);
 }
@@ -26,6 +32,13 @@ TEST(TestGetters, Agility_Normal) {
 
     EXPECT_EQ(racer.getAgility(), HASE_TEST_VAL);
 }
+
+TEST(TestGetters, Agility_Bonus) {
+    Racer racer = Racer(Personality::quick, 0, HASE_TEST_VAL, 0, 0);
+
+    EXPECT_EQ(racer.getHull(), HASE_TEST_VAL + HASE_PERSONALITY_BONUS);
+}
+
 TEST(TestGetters, Agilityl_Min) {
     Racer racer = Racer(Personality::unavailable, 0, MIN_HASE_BONUS - HASE_TEST_VAL, 0, 0);
 
@@ -44,6 +57,12 @@ TEST(TestGetters, Systems_Normal) {
     EXPECT_EQ(racer.getSystems(), HASE_TEST_VAL);
 }
 
+TEST(TestGetters, Systems_Bonus) {
+    Racer racer = Racer(Personality::playful, 0, 0, HASE_TEST_VAL, 0);
+
+    EXPECT_EQ(racer.getSystems(), HASE_TEST_VAL + HASE_PERSONALITY_BONUS);
+}
+
 TEST(TestGetters, Systems_Min) {
     Racer racer = Racer(Personality::unavailable, 0, 0, MIN_HASE_BONUS - HASE_TEST_VAL, 0);
 
@@ -60,6 +79,12 @@ TEST(TestGetters, Engineering_Normal) {
     Racer racer = Racer(Personality::unavailable, 0, 0, 0, HASE_TEST_VAL);
 
     EXPECT_EQ(racer.getEngineering(), HASE_TEST_VAL);
+}
+
+TEST(TestGetters, Engineering_Bonus) {
+    Racer racer = Racer(Personality::confident, 0, 0, 0, HASE_TEST_VAL);
+
+    EXPECT_EQ(racer.getEngineering(), HASE_TEST_VAL + HASE_PERSONALITY_BONUS);
 }
 
 TEST(TestGetters, Engineering_Min) {

@@ -1,4 +1,5 @@
 #pragma once
+#include "../Cards/StandardPlayer.h"
 
 const int MIN_HASE_BONUS = 0;
 const int HASE_PERSONALITY_BONUS = 1;
@@ -14,7 +15,7 @@ enum Personality
 	len
 };
 
-class Racer
+class Racer : public StandardPlayer
 {
 public:
 	Racer();
@@ -38,4 +39,6 @@ private:
 	int agility;
 	int systems;
 	int engineering;
+
+	int getHase(int haseScore, Personality personality);
 };
